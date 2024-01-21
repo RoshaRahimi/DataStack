@@ -1,0 +1,251 @@
+version: '3'
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.2
+    restart: always
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    ports:
+      - "2181:2181"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"
+    networks:
+      - trino-network
+
+  kafka-broker:
+    image: confluentinc/cp-kafka:latest
+    restart: always
+    hostname: kafka-broker
+    container_name: kafka-broker
+    ports:
+      - "19092:19092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka-broker:19092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_LOG_CLEANUP_POLICY: compact
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"
+    networks:
+      - trino-network
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry:7.3.2
+    restart: always
+    hostname: schema-registry
+    container_name: schema-registry
+    depends_on:
+      - kafka-broker
+      - zookeeper
+    ports:
+      - "8081:8081"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: 'zookeeper:2181'
+      SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: kafka-broker:19092
+      SCHEMA_REGISTRY_DEBUG: 'true'
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"
+    networks:
+      - trino-network
+
+  kafka-connect:
+    image: confluentinc/cp-kafka-connect:7.3.2
+    restart: always
+    container_name: kafka-connect
+    ports:
+      - "8083"
+    depends_on:
+      - kafka-broker
+      - schema-registry
+      - zookeeper
+    environment:
+      CONNECT_BOOTSTRAP_SERVERS: kafka-broker:19092
+      CONNECT_REST_PORT: 8083
+      CONNECT_REST_ADVERTISED_HOST_NAME: kafka-connect
+      CONNECT_GROUP_ID: kafka-connect-group
+      CONNECT_CONFIG_STORAGE_TOPIC: docker-connect-configs
+      CONNECT_OFFSET_STORAGE_TOPIC: docker-connect-offsets
+      CONNECT_STATUS_STORAGE_TOPIC: docker-connect-status
+      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: "1"
+      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: "1"
+      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: "1"
+      CONNECT_KEY_CONVERTER: io.confluent.connect.avro.AvroConverter
+      CONNECT_VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
+      CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL: 'http://schema-registry:8081'
+      CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: 'http://schema-registry:8081'
+      CONNECT_INTERNAL_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_INTERNAL_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+      CONNECT_LOG4J_ROOT_LOGLEVEL: "INFO"
+      CONNECT_LOG4J_LOGGERS: "org.apache.kafka.connect.runtime.rest=WARN,org.reflections=ERROR"
+      CONNECT_PLUGIN_PATH: '/usr/share/java,/etc/kafka-connect/source/jars,/etc/kafka-connect/sink/jars,/usr/share/confluent-hub-components'
+    volumes:
+      - ./connectors/source:/etc/kafka-connect/source/jars/
+      - ./connectors/sink:/etc/kafka-connect/sink/jars/
+      - ./connectors:/connectors/
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"
+    command:
+      - bash
+      - -c
+      - |
+        /etc/confluent/docker/run
+    networks:
+      - trino-network
+
+
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    restart: always
+    ports:
+      - "6680:6680"
+    depends_on:
+      - kafka-broker
+      - schema-registry
+      - zookeeper
+      - kafka-connect
+    environment:
+      SERVER_PORT: 6680
+      LOGGING_LEVEL_ROOT: info
+      KAFKA_CLUSTERS_0_NAME: OFOOD-Kafka-Cluster
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka-broker:19092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+      KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schema-registry:8081
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: kafka-connect
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://kafka-connect:8083
+      AUTH_TYPE: "LOGIN_FORM"
+      SPRING_SECURITY_USER_NAME: admin
+      SPRING_SECURITY_USER_PASSWORD: 1qazxsw@3edc
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"
+    networks:
+      - trino-network
+
+  mysql_falafel:
+    image: mysql:latest
+    container_name: mysql-falafel
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: falafel_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "33061:3306"
+    volumes:
+      - mysql-db:/var/lib/mysql
+    networks:
+      - trino-network
+
+  minio:
+    hostname: minio
+    image: 'minio/minio:RELEASE.2021-01-08T21-18-21Z'
+    container_name: minio
+    ports:
+      - '9000:9000'
+    volumes:
+      - ./data:/data
+      - minio-data:/export
+    environment:
+      MINIO_ACCESS_KEY: minio_access_key
+      MINIO_SECRET_KEY: minio_secret_key
+    command: server /data 
+    networks:
+      - trino-network
+
+  trino-coordinator:
+    image: "trinodb/trino:431"
+    container_name: trino-coordinator
+    restart: always
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./trino/coordinator/etc:/etc/trino:ro
+      - ./trino/coordinator/etc/catalog:/etc/trino/catalog
+    depends_on:
+      - trino-worker
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: '1GB'
+    networks:
+      - trino-network
+
+  trino-worker:
+      image: "trinodb/trino:431"
+      restart: always
+      volumes:
+        - ./trino/worker/etc:/etc/trino:ro
+        - ./trino/worker/etc/catalog:/etc/trino/catalog
+      deploy:
+        mode: replicated
+        replicas: 2
+        resources:
+          limits:
+            cpus: '2'
+            memory: '1GB'
+      networks:
+      - trino-network
+
+  hive-metastore:
+    hostname: hive-metastore
+    image: 'bitsondatadev/hive-metastore:latest'
+    container_name: hive-metastore
+    ports:
+      - '9083:9083' 
+    volumes:
+      - ./conf/metastore-site.xml:/opt/apache-hive-metastore-3.0.0-bin/conf/metastore-site.xml:ro
+    environment:
+      METASTORE_DB_HOSTNAME: mariadb
+    depends_on:
+      - mariadb
+    networks:
+      - trino-network
+      
+  mariadb:
+    hostname: mariadb
+    image: mariadb:10.5.8
+    container_name: mariadb
+    ports:
+      - 33062:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DATABASE: metastore_db
+    networks:
+      - trino-network
+
+volumes:
+  mysql-db: 
+    driver: local
+  minio-data:
+    driver: local
+  
+networks:
+  trino-network:  
+    driver: bridge
