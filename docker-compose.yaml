@@ -240,6 +240,55 @@ services:
     networks:
       - trino-network
 
+  metabase:
+    image: metabase/metabase
+    container_name: metabase
+    restart: always
+    hostname: metabase
+    volumes:
+      - ./dev/urandom:/dev/random:ro
+      - ./plugins/metabase-trino:/plugins
+    ports:
+      - "3000:3000"
+    environment:
+        MB_DB_TYPE: postgres
+        MB_DB_DBNAME: metabase
+        MB_DB_PORT: 5432
+        MB_DB_USER: metabase
+        MB_DB_PASS: metabase
+        MB_DB_HOST: postgres-metabase
+        MB_PLUGINS_DIR: /plugins
+    healthcheck:
+        test: curl --fail -I http://localhost:3000/api/health || exit 1
+        interval: 15s
+        timeout: 5s
+        retries: 5
+    logging:
+        driver: "json-file"
+        options:
+          max-size: "10m"
+          max-file: "10"
+    networks:
+      - trino-network
+
+  postgres-metabase:
+    image: postgres:latest
+    container_name: postgres-metabase
+    hostname: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: metabase
+      POSTGRES_DB: metabase
+      POSTGRES_PASSWORD: metabase
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"
+    networks:
+      - trino-network
+
+
 volumes:
   mysql-db: 
     driver: local
