@@ -11,22 +11,31 @@ GRANT GRANT OPTION ON *.* TO 'root'@'localhost';
 after running docker compose file, you will have kafka-ui to see the status of connectors include sinks and sources and schema-registry and messages
 you need to add some commans in kafka-connect to have debezium connector install. this is the command to install mysql debezium connector
 
-
+<pre>
 docker container exec -it kafka-connect /bin/bash
+</pre>
 
+<pre>
 confluent-hub install --no-prompt debezium/debezium-connector-mysql:latest
+</pre>
 
 after instlling debezium connector you need to reset kafka-connect
 
+<pre>
 docker restart kafka-connect
+</pre>
 
 command to create minio sink connector
 
+<pre>
 curl http://localhost:8083/connectors -i -X POST -H "Content-Type:application/json" -d "@/connectors/minio-sink.properties"
+</pre>
 
 command to create mysql source connector
 
+<pre>
 curl http://localhost:8083/connectors -i -X POST -H "Content-Type:application/json" -d "@/connectors/mysql-source.properties"
+</pre>
 
 now we have a source connector to mysql that get messages from it and have a sink connector to minio to consume messages from mysql.
 
