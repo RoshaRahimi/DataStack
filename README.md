@@ -4,8 +4,9 @@ DataStack is a Docker Compose project that provides a robust and versatile stack
 
 when start using mysql as a source, you have to set a root permission in mysql, it helps to avoid raising permission error when running connector creator command for mysql.
 
+<pre>
 GRANT GRANT OPTION ON *.* TO 'root'@'localhost';
-
+</pre>
 
 after running docker compose file, you will have kafka-ui to see the status of connectors include sinks and sources and schema-registry and messages
 you need to add some commans in kafka-connect to have debezium connector install. this is the command to install mysql debezium connector
