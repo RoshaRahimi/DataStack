@@ -2,31 +2,36 @@
 DataStack is a Docker Compose project that provides a robust and versatile stack for managing and analyzing data. This stack includes various services to handle different aspects of the data lifecycle.
 
 
-# when start using mysql as a source, you have to set a root permission in mysql, it helps to avoid raising permission error when running connector creator command for mysql.
+when start using mysql as a source, you have to set a root permission in mysql, it helps to avoid raising permission error when running connector creator command for mysql.
+
 GRANT GRANT OPTION ON *.* TO 'root'@'localhost';
 
 
-# after running docker compose file, you will have kafka-ui to see the status of connectors include sinks and sources and schema-registry and messages
-# you need to add some commans in kafka-connect to have debezium connector install. this is the command to install mysql debezium connector
+after running docker compose file, you will have kafka-ui to see the status of connectors include sinks and sources and schema-registry and messages
+you need to add some commans in kafka-connect to have debezium connector install. this is the command to install mysql debezium connector
 
 
 docker container exec -it kafka-connect /bin/bash
 
 confluent-hub install --no-prompt debezium/debezium-connector-mysql:latest
 
-# after instlling debezium connector you need to reset kafka-connect
+after instlling debezium connector you need to reset kafka-connect
+
 docker restart kafka-connect
 
-# command to create minio sink connector
+command to create minio sink connector
+
 curl http://localhost:8083/connectors -i -X POST -H "Content-Type:application/json" -d "@/connectors/minio-sink.properties"
 
-# command to create mysql source connector
+command to create mysql source connector
+
 curl http://localhost:8083/connectors -i -X POST -H "Content-Type:application/json" -d "@/connectors/mysql-source.properties"
 
-# now we have a source connector to mysql that get messages from it and have a sink connector to minio to consume messages from mysql.
+now we have a source connector to mysql that get messages from it and have a sink connector to minio to consume messages from mysql.
 
 
 this is the mysql connector that we have, let see how it does work:
+
 {
     "name": "mysql-source-v55", 
     "config": {
