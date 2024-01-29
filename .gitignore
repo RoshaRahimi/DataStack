@@ -1,0 +1,15 @@
+#ignoring airflow folders
+dags/
+config/
+logs/
+
+#ignore clickhouse folders
+clickhouse_data/
+clickhouse_log/
+
+#ignore minio folder
+minio-data/
+
+.env
+
+.git/
