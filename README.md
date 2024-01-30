@@ -1,16 +1,16 @@
-# DataStack 1
+# DataStack
 DataStack
 DataStack is a comprehensive Docker Compose project designed to provide a robust and versatile stack for managing and analyzing data. This stack brings together various services, each playing a crucial role in different stages of the data lifecycle.
 
-## Overview 2
+## Overview
 In the ever-evolving landscape of data management and analytics, DataStack stands out as a powerful solution. Leveraging Docker Compose, this project seamlessly integrates different services to handle various aspects of the data journey, from ingestion to analysis.
 
-## Kafka and Debezium 2
+## Kafka and Debezium
 DataStack relies on Apache Kafka and Debezium for its data streaming and change data capture capabilities. Kafka, a distributed event streaming platform, provides a scalable and fault-tolerant foundation for real-time data processing. Debezium, a distributed platform for CDC, enables the streaming of database changes into Kafka topics, ensuring a reliable and up-to-date data pipeline.
 
 The decision to use Kafka and Debezium was driven by the need for a robust and scalable solution to handle data changes in real-time. These technologies empower DataStack to keep data flowing seamlessly across different components of the ecosystem.
 
-## MySQL and Minio 2
+## MySQL and Minio
 DataStack integrates MySQL as a source database and Minio as a cloud storage solution. MySQL, a widely used relational database, serves as a dependable source for data, and Debezium captures changes from MySQL for streaming into Kafka. Minio, an object storage system compatible with Amazon S3, acts as a versatile sink for storing and managing data.
 
 The choice of MySQL and Minio within the ecosystem ensures compatibility, flexibility, and scalability. MySQL, with its reliability and ACID compliance, serves as a trustworthy source for data. Minio, being S3-compatible, allows seamless integration with a variety of applications and tools in the cloud ecosystem.
@@ -23,14 +23,10 @@ Whether you're dealing with data ingestion, transformation, or analysis, DataSta
 
 Stay tuned for further details on installation, usage, and contributing guidelines as DataStack evolves to meet the diverse needs of data professionals and enthusiasts alike.
 
-## ClickHouse 2
+## ClickHouse
 DataStack leverages ClickHouse as a powerful data warehousing solution. ClickHouse efficiently fetches data from Kafka and stores it in materialized views, enabling the generation of insightful reports. As a columnar database, ClickHouse excels at handling analytical queries, making it an ideal choice for data warehousing within the DataStack ecosystem.
 
 The incorporation of ClickHouse further enhances DataStack's capabilities, providing a scalable and high-performance solution for storing and analyzing large volumes of data. Stay tuned for more details on installation, usage, and contributing guidelines as DataStack evolves to meet the diverse needs of data professionals and enthusiasts alike.
-
-
-# DataStack
-DataStack is a Docker Compose project that provides a robust and versatile stack for managing and analyzing data. This stack includes various services to handle different aspects of the data lifecycle.
 
 
 when start using mysql as a source, you have to set a root permission in mysql, it helps to avoid raising permission error when running connector creator command for mysql.
