@@ -109,7 +109,7 @@ this is the mysql connector that we have, let see how it does work:
 }
 
 
-# Connector Configuration:
+### Connector Configuration:
 
 connector.class: Specifies the class implementing the connector, in this case, it's the Debezium MySQL Connector.
 database.hostname: The hostname of the MySQL server. actually it is the name of mysql service in docker compose file
@@ -122,32 +122,32 @@ schema.history.internal.kafka.topic: Kafka topic for storing internal schema his
 include.schema.changes: Whether to include schema changes in the streaming events (set to false).
 The include.schema.changes configuration parameter in the Debezium MySQL Connector controls whether the streaming events sent to Apache Kafka should include information about changes to the database schema. When include.schema.changes is set to false, it means that the connector will not include information about alterations to the database schema in the messages that it sends to Kafka topics.
 
-# Converter Configuration:
+### Converter Configuration:
 
 key.converter: Converter for key serialization (JSON in this case).
 value.converter: Converter for value serialization (Avro in this case).
 key.converter.schemas.enable and value.converter.schemas.enable: Enable or disable schema inclusion in messages.
 value.converter.schema.registry.url: URL for the Avro schema registry.
 
-# Log Retention Configuration:
+### Log Retention Configuration:
 
 log.retention.bytes, log.retention.hours, log.retention.minutes, log.retention.ms: Log retention settings.
 
 
-# Transformations:
+### Transformations:
 
 transforms: Comma-separated list of transformations to apply.
 transforms.unwrap.type: Transformation to unwrap the Debezium message format.
 transforms.unwrap.drop.tombstones: Whether to drop tombstone events (set to true). remains deleted records with operation 'd'
 transforms.unwrap.add.fields: Additional fields to be added to the unwrapped message (e.g., operation type, timestamps).
 
-# Timestamp Converter:
+### Timestamp Converter:
 
 transforms.TimestampConverter.type: Transformation to convert timestamp format.
 transforms.TimestampConverter.field: Field containing the timestamp.
 transforms.TimestampConverter.format: Format of the timestamp.
 transforms.TimestampConverter.target.type: Target type for the timestamp.
 
-# Snapshot Mode:
+### Snapshot Mode:
 
 snapshot.mode: Specifies how to handle initial snapshotting (set to "initial").
