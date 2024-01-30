@@ -10,3 +10,16 @@ USER airflow
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 RUN pip install --no-cache-dir "apache-airflow==${AIRFLOW_VERSION}" apache-airflow-providers-apache-spark==2.1.3
 RUN pip install airflow-providers-clickhouse
+
+
+FROM confluentinc/cp-kafka-connect-base:latest-ubi8
+
+ENV CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
+ENV CLASSPATH="/usr/share/confluent-hub-components/java/*:${CLASSPATH}"
+
+RUN echo "Installing Connector"
+RUN confluent-hub install --no-prompt debezium/debezium-connector-mysql:latest
+
+# COPY ./entrypoint.sh .
+
+# ENTRYPOINT [ "./entrypoint.sh" ]

@@ -1,6 +1,5 @@
 version: '3'
 
----
 x-airflow-common:
   &airflow-common
   # In order to add custom dependencies or upgrade provider packages you can use your extended image.
@@ -375,7 +374,98 @@ services:
       options:
         max-size: "10m"
         max-file: "10"
-    command: bash -c "/etc/confluent/docker/run && confluent-hub install --no-prompt debezium/debezium-connector-mysql:latest"
+    command:
+      - bash
+      - -c
+      - |
+        echo "Launching Kafka Connect worker"
+        /etc/confluent/docker/run &
+
+        echo "Waiting for Kafka Connect to start listening on localhost ⏳"
+        while : ; do
+            curl_status=$$(curl -s -o /dev/null -w %{http_code} http://localhost:8083/connectors)
+            echo -e $$(date) " Kafka Connect listener HTTP state: " $$curl_status " (waiting for 200)"
+            if [ $$curl_status -eq 200 ] ; then
+            break
+            fi
+            sleep 5 
+        done
+
+        
+        echo "creating kafka topics"
+        kafka-topics --create --bootstrap-server broker:19092 --replication-factor 1 --topic MyFirstTopic
+
+
+        echo -e "\n--\n+> Creating Data Generator source"
+
+        curl -s -X POST -H  "Content-Type:application/json" http://localhost:8083/connectors \
+            -d '{
+                "name": "mysql-source-v56", 
+                "config": {
+                    "connector.class": "io.debezium.connector.mysql.MySqlConnector", 
+                    "database.hostname": "mysql_falafel", 
+                    "database.port": "3306", 
+                    "database.user": "root", 
+                    "database.password": "my-secret-pw", 
+                    "database.server.id": "1", 
+                    "topic.prefix": "production", 
+                    "schema.history.internal.kafka.bootstrap.servers": "kafka-broker:19092", 
+                    "schema.history.internal.kafka.topic": "dbhistory.production", 
+                    "include.schema.changes": "false",
+                    "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+                    "value.converter": "io.confluent.connect.avro.AvroConverter",
+                    "key.converter.schemas.enable": "false",
+                    "value.converter.schemas.enable": "true",
+                    "value.converter.schema.registry.url": "http://schema-registry:8081",
+                    "log.retention.bytes":"-1",
+                    "log.retention.hours":"168",       
+                    "log.retention.minutes":"null",
+                    "log.retention.ms":"-1",
+                    "transforms": "unwrap,TimestampConverter",
+                    "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
+                    "transforms.unwrap.drop.tombstones": "true",
+                    "transforms.unwrap.add.fields": "op,source.ts_ms:EVENT_TS,ts_ms:KAFKA_EVENT_TS",
+                    "transforms.TimestampConverter.type": "org.apache.kafka.connect.transforms.TimestampConverter$$Value",
+                    "transforms.TimestampConverter.field": "created_at",
+                    "transforms.TimestampConverter.format": "yyyy-MM-dd HH:mm:ss",
+                    "transforms.TimestampConverter.target.type": "string",
+                    "snapshot.mode": "initial"
+                  }
+                }'
+
+
+          curl -s -X POST -H  "Content-Type:application/json" http://localhost:8083/connectors \
+            -d '{
+                "name": "sink-minio-v39",
+                "config": {
+                  "connector.class": "io.confluent.connect.s3.S3SinkConnector",
+                  "flush.size": "1",
+                  "timezone": "Asia/Tehran",
+                  "rotate.interval.ms": "3600000",
+                  "retry.backoff.ms": "60000",
+                  "locale": "en-US",
+                  "aws.access.key.id": "minio_access_key",
+                  "aws.secret.access.key": "minio_secret_key",
+                  "format.class": "io.confluent.connect.s3.format.parquet.ParquetFormat",
+                  "partitioner.class": "io.confluent.connect.storage.partitioner.DailyPartitioner",
+                  "storage.class": "io.confluent.connect.s3.storage.S3Storage",
+                  "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+                  "value.converter": "io.confluent.connect.avro.AvroConverter",
+                  "key.converter.schemas.enable": "false",
+                  "value.converter.schemas.enable": "false",
+                  "s3.bucket.name": "production",
+                  "schema.compatibility": "BACKWARD",
+                  "connect.meta.data": "false",
+                  "store.url": "http://minio:9000",
+                  "topics.regex": "production.falafel_db.*",
+                  "value.converter.schema.registry.url": "http://schema-registry:8081",
+                  "path.format": "YYYY-MM-dd",
+                  "timestamp.extractor": "Record",
+                  "timestamp.field": "__EVENT_TS"
+                }
+              }'
+
+        sleep infinity
 
 
   kafka-ui:
