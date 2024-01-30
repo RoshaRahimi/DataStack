@@ -29,6 +29,12 @@ DataStack leverages ClickHouse as a powerful data warehousing solution. ClickHou
 The incorporation of ClickHouse further enhances DataStack's capabilities, providing a scalable and high-performance solution for storing and analyzing large volumes of data. Stay tuned for more details on installation, usage, and contributing guidelines as DataStack evolves to meet the diverse needs of data professionals and enthusiasts alike.
 
 
+
+![Alt text](https://raw.githubusercontent.com/RoshaRahimi/DataStack/main/image/datastack-flow-level-1.jpg)
+
+
+
+
 when start using mysql as a source, you have to set a root permission in mysql, it helps to avoid raising permission error when running connector creator command for mysql.
 
 <pre>
