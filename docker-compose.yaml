@@ -282,7 +282,7 @@ services:
       ZOOKEEPER_CLIENT_PORT: 2181
       ZOOKEEPER_TICK_TIME: 2000
     ports:
-      - "2181:2181"
+      - "52181:2181"
     logging:
       driver: "json-file"
       options:
@@ -512,6 +512,30 @@ services:
     volumes:
       - mysql-db:/var/lib/mysql
 
+
+  clickhouse-live:
+    image: clickhouse/clickhouse-server:22.5
+    restart: always
+    environment:
+      CLICKHOUSE_DB: 'live_db'
+      CLICKHOUSE_USER: 'admin'
+      CLICKHOUSE_PASSWORD: 'admin123'
+    ports:
+      - "8124:8123"
+    depends_on:
+      - kafka-broker
+      - schema-registry
+      - zookeeper
+      - kafka-connect
+      - kafka-ui
+    volumes:
+      - clickhouse:/etc/clickhouse-server
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "10"
+        
 volumes:
   postgres-db-volume:
   mysql-db: 
