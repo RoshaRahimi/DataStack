@@ -600,3 +600,80 @@
 [2024-01-31T14:19:28.103+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:19:28.103+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2024-01-31T14:19:28.115+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:19:28.115+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:18:00+00:00, run_after=2024-01-31 14:20:00+00:00
 [2024-01-31T14:19:28.127+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.274 seconds
+[2024-01-31T14:19:59.052+0000] {processor.py:161} INFO - Started process (PID=898) to work on /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:19:59.054+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mysql_ingestor.py for tasks to queue
+[2024-01-31T14:19:59.056+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:19:59.056+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:19:59.292+0000] {processor.py:840} INFO - DAG(s) 'mysql_ingestor' retrieved from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:19:59.303+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:19:59.303+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:19:59.314+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:19:59.314+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:18:00+00:00, run_after=2024-01-31 14:20:00+00:00
+[2024-01-31T14:19:59.328+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.280 seconds
+[2024-01-31T14:20:29.361+0000] {processor.py:161} INFO - Started process (PID=907) to work on /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:20:29.362+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mysql_ingestor.py for tasks to queue
+[2024-01-31T14:20:29.363+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:20:29.363+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:20:29.618+0000] {processor.py:840} INFO - DAG(s) 'mysql_ingestor' retrieved from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:20:29.632+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:20:29.632+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:20:29.645+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:20:29.645+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:20:00+00:00, run_after=2024-01-31 14:22:00+00:00
+[2024-01-31T14:20:29.659+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.301 seconds
+[2024-01-31T14:21:00.521+0000] {processor.py:161} INFO - Started process (PID=916) to work on /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:21:00.523+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mysql_ingestor.py for tasks to queue
+[2024-01-31T14:21:00.524+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:21:00.524+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:21:00.767+0000] {processor.py:840} INFO - DAG(s) 'mysql_ingestor' retrieved from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:21:00.780+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:21:00.780+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:21:00.793+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:21:00.793+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:20:00+00:00, run_after=2024-01-31 14:22:00+00:00
+[2024-01-31T14:21:00.804+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.285 seconds
+[2024-01-31T14:21:30.837+0000] {processor.py:161} INFO - Started process (PID=925) to work on /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:21:30.838+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mysql_ingestor.py for tasks to queue
+[2024-01-31T14:21:30.839+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:21:30.839+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:21:31.079+0000] {processor.py:840} INFO - DAG(s) 'mysql_ingestor' retrieved from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:21:31.091+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:21:31.091+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:21:31.102+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:21:31.102+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:20:00+00:00, run_after=2024-01-31 14:22:00+00:00
+[2024-01-31T14:21:31.114+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.279 seconds
+[2024-01-31T14:22:01.993+0000] {processor.py:161} INFO - Started process (PID=934) to work on /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:22:01.995+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mysql_ingestor.py for tasks to queue
+[2024-01-31T14:22:01.996+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:22:01.995+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:22:02.233+0000] {processor.py:840} INFO - DAG(s) 'mysql_ingestor' retrieved from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:22:02.245+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:22:02.245+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:22:02.256+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:22:02.256+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:22:00+00:00, run_after=2024-01-31 14:24:00+00:00
+[2024-01-31T14:22:02.267+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.276 seconds
+[2024-01-31T14:22:32.314+0000] {processor.py:161} INFO - Started process (PID=943) to work on /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:22:32.315+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mysql_ingestor.py for tasks to queue
+[2024-01-31T14:22:32.317+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:22:32.316+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:22:32.543+0000] {processor.py:840} INFO - DAG(s) 'mysql_ingestor' retrieved from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:22:32.554+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:22:32.554+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:22:32.567+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:22:32.567+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:22:00+00:00, run_after=2024-01-31 14:24:00+00:00
+[2024-01-31T14:22:32.578+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.267 seconds
+[2024-01-31T14:23:03.470+0000] {processor.py:161} INFO - Started process (PID=952) to work on /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:23:03.471+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mysql_ingestor.py for tasks to queue
+[2024-01-31T14:23:03.472+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:23:03.472+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:23:03.723+0000] {processor.py:840} INFO - DAG(s) 'mysql_ingestor' retrieved from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:23:03.737+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:23:03.737+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:23:03.751+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:23:03.751+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:22:00+00:00, run_after=2024-01-31 14:24:00+00:00
+[2024-01-31T14:23:03.761+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.294 seconds
+[2024-01-31T14:23:34.703+0000] {processor.py:161} INFO - Started process (PID=961) to work on /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:23:34.705+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mysql_ingestor.py for tasks to queue
+[2024-01-31T14:23:34.707+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:23:34.706+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:23:34.937+0000] {processor.py:840} INFO - DAG(s) 'mysql_ingestor' retrieved from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:23:34.949+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:23:34.948+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:23:34.960+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:23:34.960+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:22:00+00:00, run_after=2024-01-31 14:24:00+00:00
+[2024-01-31T14:23:34.970+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.269 seconds
+[2024-01-31T14:24:05.935+0000] {processor.py:161} INFO - Started process (PID=976) to work on /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:24:05.936+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mysql_ingestor.py for tasks to queue
+[2024-01-31T14:24:05.938+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:24:05.938+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:24:06.167+0000] {processor.py:840} INFO - DAG(s) 'mysql_ingestor' retrieved from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:24:06.178+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:24:06.178+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:24:06.189+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:24:06.189+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:24:00+00:00, run_after=2024-01-31 14:26:00+00:00
+[2024-01-31T14:24:06.200+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.267 seconds
+[2024-01-31T14:24:37.130+0000] {processor.py:161} INFO - Started process (PID=985) to work on /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:24:37.131+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mysql_ingestor.py for tasks to queue
+[2024-01-31T14:24:37.132+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:24:37.132+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:24:37.379+0000] {processor.py:840} INFO - DAG(s) 'mysql_ingestor' retrieved from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:24:37.391+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:24:37.391+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:24:37.403+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:24:37.403+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:24:00+00:00, run_after=2024-01-31 14:26:00+00:00
+[2024-01-31T14:24:37.415+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.287 seconds
+[2024-01-31T14:25:08.351+0000] {processor.py:161} INFO - Started process (PID=994) to work on /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:25:08.353+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/mysql_ingestor.py for tasks to queue
+[2024-01-31T14:25:08.356+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:25:08.355+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:25:08.583+0000] {processor.py:840} INFO - DAG(s) 'mysql_ingestor' retrieved from /opt/airflow/dags/mysql_ingestor.py
+[2024-01-31T14:25:08.596+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:25:08.595+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:25:08.608+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:25:08.608+0000] {dag.py:3823} INFO - Setting next_dagrun for mysql_ingestor to 2024-01-31 14:24:00+00:00, run_after=2024-01-31 14:26:00+00:00
+[2024-01-31T14:25:08.620+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/mysql_ingestor.py took 0.273 seconds

@@ -1,7 +1,7 @@
 #ignoring airflow folders
 #dags/
-#config/
-#logs/
+config/
+logs/
 
 #ignore clickhouse folders
 clickhouse_data/
