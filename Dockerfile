@@ -12,13 +12,13 @@ RUN pip install --no-cache-dir "apache-airflow==${AIRFLOW_VERSION}" apache-airfl
 RUN pip install airflow-providers-clickhouse
 
 
-FROM confluentinc/cp-kafka-connect-base:latest-ubi8
+#FROM confluentinc/cp-kafka-connect-base:latest-ubi8
 
-ENV CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
-ENV CLASSPATH="/usr/share/confluent-hub-components/java/*:${CLASSPATH}"
+#ENV CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
+#ENV CLASSPATH="/usr/share/confluent-hub-components/java/*:${CLASSPATH}"
 
-RUN echo "Installing Connector"
-RUN confluent-hub install --no-prompt debezium/debezium-connector-mysql:latest
+#RUN echo "Installing Connector"
+#RUN confluent-hub install --no-prompt debezium/debezium-connector-mysql:latest
 
 # COPY ./entrypoint.sh .
 
