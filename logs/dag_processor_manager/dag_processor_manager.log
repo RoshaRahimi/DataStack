@@ -1,0 +1,831 @@
+[2024-01-31T09:16:01.638+0000] {manager.py:469} INFO - Processing files using up to 2 processes at a time 
+[2024-01-31T09:16:01.638+0000] {manager.py:470} INFO - Process each file at most once every 30 seconds
+[2024-01-31T09:16:01.638+0000] {manager.py:471} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-01-31T09:16:01.638+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T09:16:01.639+0000] {manager.py:741} INFO - There are 0 files in /opt/airflow/dags
+[2024-01-31T09:21:02.307+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T09:21:02.308+0000] {manager.py:741} INFO - There are 0 files in /opt/airflow/dags
+[2024-01-31T09:26:03.227+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T09:26:03.228+0000] {manager.py:741} INFO - There are 0 files in /opt/airflow/dags
+[2024-01-31T09:27:34.109+0000] {manager.py:451} INFO - Exiting gracefully upon receiving signal 15
+[2024-01-31T09:46:25.971+0000] {manager.py:469} INFO - Processing files using up to 2 processes at a time 
+[2024-01-31T09:46:25.972+0000] {manager.py:470} INFO - Process each file at most once every 30 seconds
+[2024-01-31T09:46:25.972+0000] {manager.py:471} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-01-31T09:46:25.972+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T09:46:25.972+0000] {manager.py:741} INFO - There are 0 files in /opt/airflow/dags
+[2024-01-31T09:50:33.410+0000] {manager.py:451} INFO - Exiting gracefully upon receiving signal 15
+[2024-01-31T13:30:34.491+0000] {manager.py:469} INFO - Processing files using up to 2 processes at a time 
+[2024-01-31T13:30:34.492+0000] {manager.py:470} INFO - Process each file at most once every 30 seconds
+[2024-01-31T13:30:34.492+0000] {manager.py:471} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-01-31T13:30:34.492+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T13:30:34.492+0000] {manager.py:741} INFO - There are 0 files in /opt/airflow/dags
+[2024-01-31T13:35:35.269+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T13:35:35.271+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2024-01-31T13:35:36.125+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.18s           2024-01-31T13:35:35
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.82s           2024-01-31T13:35:36
+================================================================================
+[2024-01-31T13:36:06.627+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                              PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:36:05
+/opt/airflow/dags/mysql_ingestor.py    119  0.00s             1           0  0.82s           2024-01-31T13:35:36
+================================================================================
+[2024-01-31T13:36:36.822+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:36:35
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T13:36:06
+================================================================================
+[2024-01-31T13:37:07.033+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:37:06
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:36:38
+================================================================================
+[2024-01-31T13:37:37.272+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:37:36
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:37:09
+================================================================================
+[2024-01-31T13:38:07.539+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.07s           2024-01-31T13:38:06
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T13:37:39
+================================================================================
+[2024-01-31T13:38:37.769+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:38:36
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:38:10
+================================================================================
+[2024-01-31T13:39:08.013+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:39:07
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T13:38:41
+================================================================================
+[2024-01-31T13:39:38.283+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:39:37
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:39:12
+================================================================================
+[2024-01-31T13:40:08.554+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:40:07
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:39:42
+================================================================================
+[2024-01-31T13:40:35.787+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T13:40:35.790+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2024-01-31T13:40:38.829+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:40:37
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T13:40:13
+================================================================================
+[2024-01-31T13:41:09.084+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:41:08
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:40:44
+================================================================================
+[2024-01-31T13:41:39.331+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:41:38
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:41:15
+================================================================================
+[2024-01-31T13:42:09.580+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:42:08
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T13:41:45
+================================================================================
+[2024-01-31T13:42:39.854+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:42:38
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:42:16
+================================================================================
+[2024-01-31T13:43:10.085+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:43:09
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:42:47
+================================================================================
+[2024-01-31T13:43:40.343+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:43:39
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:43:18
+================================================================================
+[2024-01-31T13:44:10.579+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:44:09
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T13:43:48
+================================================================================
+[2024-01-31T13:44:40.791+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:44:39
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:44:19
+================================================================================
+[2024-01-31T13:45:11.028+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:45:10
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:44:51
+================================================================================
+[2024-01-31T13:45:36.234+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T13:45:36.236+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2024-01-31T13:45:41.282+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:45:40
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:45:21
+================================================================================
+[2024-01-31T13:46:11.507+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:46:10
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:45:52
+================================================================================
+[2024-01-31T13:46:41.727+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:46:40
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.33s           2024-01-31T13:46:22
+================================================================================
+[2024-01-31T13:47:11.960+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:47:11
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T13:46:54
+================================================================================
+[2024-01-31T13:47:42.162+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.10s           2024-01-31T13:47:41
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:47:25
+================================================================================
+[2024-01-31T13:48:12.385+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.11s           2024-01-31T13:48:11
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:47:56
+================================================================================
+[2024-01-31T13:48:42.654+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:48:41
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T13:48:26
+================================================================================
+[2024-01-31T13:49:12.849+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:49:11
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T13:48:58
+================================================================================
+[2024-01-31T13:49:43.058+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:49:42
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:49:29
+================================================================================
+[2024-01-31T13:50:13.272+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:50:12
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.35s           2024-01-31T13:50:00
+================================================================================
+[2024-01-31T13:50:36.433+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T13:50:36.436+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2024-01-31T13:50:43.493+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.10s           2024-01-31T13:50:42
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:50:31
+================================================================================
+[2024-01-31T13:51:13.719+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:51:12
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:51:02
+================================================================================
+[2024-01-31T13:51:43.945+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.10s           2024-01-31T13:51:43
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:51:33
+================================================================================
+[2024-01-31T13:52:14.154+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:52:13
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T13:52:04
+================================================================================
+[2024-01-31T13:52:44.371+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:52:43
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:52:35
+================================================================================
+[2024-01-31T13:53:14.573+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:53:13
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T13:53:06
+================================================================================
+[2024-01-31T13:53:44.783+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:53:43
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:53:37
+================================================================================
+[2024-01-31T13:54:14.999+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:54:14
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.33s           2024-01-31T13:54:09
+================================================================================
+[2024-01-31T13:54:45.208+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.10s           2024-01-31T13:54:44
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T13:54:40
+================================================================================
+[2024-01-31T13:55:15.432+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:55:14
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:55:11
+================================================================================
+[2024-01-31T13:55:36.528+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T13:55:36.530+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2024-01-31T13:55:45.648+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:55:44
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T13:55:42
+================================================================================
+[2024-01-31T13:56:15.853+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:56:14
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T13:56:14
+================================================================================
+[2024-01-31T13:56:46.067+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:56:45
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:56:45
+================================================================================
+[2024-01-31T13:57:16.199+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                              PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:57:15
+/opt/airflow/dags/mysql_ingestor.py    496  0.00s             1           0  0.30s           2024-01-31T13:56:45
+================================================================================
+[2024-01-31T13:57:46.397+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:57:45
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:57:16
+================================================================================
+[2024-01-31T13:58:16.620+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:58:15
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T13:57:47
+================================================================================
+[2024-01-31T13:58:46.830+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T13:58:45
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:58:18
+================================================================================
+[2024-01-31T13:59:17.069+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:59:16
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T13:58:49
+================================================================================
+[2024-01-31T13:59:47.286+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T13:59:46
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:59:20
+================================================================================
+[2024-01-31T14:00:17.505+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:00:16
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T13:59:51
+================================================================================
+[2024-01-31T14:00:36.664+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T14:00:36.667+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2024-01-31T14:00:47.738+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:00:46
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T14:00:22
+================================================================================
+[2024-01-31T14:01:17.935+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:01:17
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T14:00:53
+================================================================================
+[2024-01-31T14:01:48.162+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:01:47
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T14:01:24
+================================================================================
+[2024-01-31T14:02:18.372+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:02:17
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T14:01:55
+================================================================================
+[2024-01-31T14:02:48.613+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:02:47
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T14:02:26
+================================================================================
+[2024-01-31T14:03:18.826+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.10s           2024-01-31T14:03:17
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T14:02:57
+================================================================================
+[2024-01-31T14:03:49.092+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:03:48
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T14:03:28
+================================================================================
+[2024-01-31T14:04:19.342+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.11s           2024-01-31T14:04:18
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T14:03:58
+================================================================================
+[2024-01-31T14:04:49.603+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.10s           2024-01-31T14:04:48
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T14:04:29
+================================================================================
+[2024-01-31T14:05:19.842+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:05:18
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T14:05:00
+================================================================================
+[2024-01-31T14:05:36.986+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T14:05:36.989+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2024-01-31T14:05:50.065+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:05:49
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T14:05:31
+================================================================================
+[2024-01-31T14:06:20.273+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:06:19
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T14:06:02
+================================================================================
+[2024-01-31T14:06:50.488+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:06:49
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T14:06:32
+================================================================================
+[2024-01-31T14:07:20.726+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:07:19
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T14:07:03
+================================================================================
+[2024-01-31T14:07:50.931+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:07:50
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T14:07:34
+================================================================================
+[2024-01-31T14:08:21.159+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:08:20
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T14:08:05
+================================================================================
+[2024-01-31T14:08:51.402+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:08:50
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T14:08:35
+================================================================================
+[2024-01-31T14:09:21.622+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:09:20
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T14:09:06
+================================================================================
+[2024-01-31T14:09:51.855+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:09:50
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T14:09:38
+================================================================================
+[2024-01-31T14:10:22.071+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:10:21
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T14:10:09
+================================================================================
+[2024-01-31T14:10:37.148+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T14:10:37.150+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2024-01-31T14:10:52.307+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:10:51
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T14:10:40
+================================================================================
+[2024-01-31T14:11:22.508+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:11:21
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T14:11:11
+================================================================================
+[2024-01-31T14:11:52.685+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:11:51
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T14:11:42
+================================================================================
+[2024-01-31T14:12:22.891+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:12:21
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.29s           2024-01-31T14:12:14
+================================================================================
+[2024-01-31T14:12:53.084+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:12:52
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T14:12:45
+================================================================================
+[2024-01-31T14:13:23.272+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:13:22
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T14:13:16
+================================================================================
+[2024-01-31T14:13:53.448+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:13:52
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T14:13:47
+================================================================================
+[2024-01-31T14:14:23.647+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:14:22
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T14:14:18
+================================================================================
+[2024-01-31T14:14:53.831+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.10s           2024-01-31T14:14:52
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T14:14:50
+================================================================================
+[2024-01-31T14:15:24.045+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.10s           2024-01-31T14:15:23
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T14:15:21
+================================================================================
+[2024-01-31T14:15:37.192+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2024-01-31T14:15:37.193+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2024-01-31T14:15:54.252+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:15:53
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T14:15:52
+================================================================================
+[2024-01-31T14:16:24.479+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:16:23
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T14:16:23
+================================================================================
+[2024-01-31T14:16:54.698+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:16:53
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.27s           2024-01-31T14:16:53
+================================================================================
+[2024-01-31T14:17:24.868+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                              PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.10s           2024-01-31T14:17:23
+/opt/airflow/dags/mysql_ingestor.py    853  0.00s             1           0  0.27s           2024-01-31T14:16:53
+================================================================================
+[2024-01-31T14:17:55.091+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:17:54
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.30s           2024-01-31T14:17:25
+================================================================================
+[2024-01-31T14:18:25.292+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.08s           2024-01-31T14:18:24
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.31s           2024-01-31T14:17:55
+================================================================================
+[2024-01-31T14:18:55.499+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.07s           2024-01-31T14:18:54
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.32s           2024-01-31T14:18:26
+================================================================================
+[2024-01-31T14:19:25.752+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/ofood_etl.py                                1           0  0.09s           2024-01-31T14:19:24
+/opt/airflow/dags/mysql_ingestor.py                           1           0  0.28s           2024-01-31T14:18:57
+================================================================================

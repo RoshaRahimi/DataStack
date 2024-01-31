@@ -1,0 +1,33 @@
+[2024-01-31T13:35:37.853+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: mysql_ingestor.ingestion scheduled__2024-01-31T13:32:00+00:00 [queued]>
+[2024-01-31T13:35:37.857+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: mysql_ingestor.ingestion scheduled__2024-01-31T13:32:00+00:00 [queued]>
+[2024-01-31T13:35:37.857+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-01-31T13:35:37.866+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): ingestion> on 2024-01-31 13:32:00+00:00
+[2024-01-31T13:35:37.870+0000] {standard_task_runner.py:60} INFO - Started process 148 to run task
+[2024-01-31T13:35:37.872+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'mysql_ingestor', 'ingestion', 'scheduled__2024-01-31T13:32:00+00:00', '--job-id', '128', '--raw', '--subdir', 'DAGS_FOLDER/mysql_ingestor.py', '--cfg-path', '/tmp/tmpbofs9mz2']
+[2024-01-31T13:35:37.873+0000] {standard_task_runner.py:88} INFO - Job 128: Subtask ingestion
+[2024-01-31T13:35:37.898+0000] {task_command.py:423} INFO - Running <TaskInstance: mysql_ingestor.ingestion scheduled__2024-01-31T13:32:00+00:00 [running]> on host eedf278c5a58
+[2024-01-31T13:35:37.940+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='mysql_ingestor' AIRFLOW_CTX_TASK_ID='ingestion' AIRFLOW_CTX_EXECUTION_DATE='2024-01-31T13:32:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-01-31T13:32:00+00:00'
+[2024-01-31T13:35:37.941+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:207: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2024-01-31T13:35:37.954+0000] {logging_mixin.py:188} INFO - [   index  order_id  customer_id       order_status                 created_at
+0      0       812            1            created 2024-01-31 23:35:37.941935
+1      0       812            1    wait_to_payment 2024-01-31 23:43:37.941940
+2      0       812            1  payment_cancelled 2024-01-31 23:48:37.941941,    index  order_id  customer_id       order_status                 created_at
+0      1       813            1            created 2024-01-31 18:40:37.941951
+1      1       813            1    wait_to_payment 2024-01-31 18:45:37.941952
+2      1       813            1  payment_cancelled 2024-01-31 18:51:37.941954]
+[2024-01-31T13:35:42.971+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T13:35:42.987+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T13:35:48.004+0000] {logging_mixin.py:188} INFO - UPDATE falafel_db.orders SET order_status = %s, updated_at = %s WHERE order_id = %s
+[2024-01-31T13:35:48.009+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T13:35:48.031+0000] {logging_mixin.py:188} INFO - UPDATE falafel_db.orders SET order_status = %s, updated_at = %s WHERE order_id = %s
+[2024-01-31T13:35:48.037+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T13:35:53.052+0000] {logging_mixin.py:188} INFO - UPDATE falafel_db.orders SET order_status = %s, updated_at = %s WHERE order_id = %s
+[2024-01-31T13:35:53.060+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T13:35:53.069+0000] {logging_mixin.py:188} INFO - UPDATE falafel_db.orders SET order_status = %s, updated_at = %s WHERE order_id = %s
+[2024-01-31T13:35:53.074+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T13:36:08.091+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-01-31T13:36:08.103+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=mysql_ingestor, task_id=ingestion, execution_date=20240131T133200, start_date=20240131T133537, end_date=20240131T133608
+[2024-01-31T13:36:08.123+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-31T13:36:08.132+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

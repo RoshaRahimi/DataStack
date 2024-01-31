@@ -1,0 +1,39 @@
+[2024-01-31T14:16:00.970+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: mysql_ingestor.ingestion scheduled__2024-01-31T14:14:00+00:00 [queued]>
+[2024-01-31T14:16:00.975+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: mysql_ingestor.ingestion scheduled__2024-01-31T14:14:00+00:00 [queued]>
+[2024-01-31T14:16:00.975+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-01-31T14:16:00.982+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): ingestion> on 2024-01-31 14:14:00+00:00
+[2024-01-31T14:16:00.986+0000] {standard_task_runner.py:60} INFO - Started process 854 to run task
+[2024-01-31T14:16:00.987+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'mysql_ingestor', 'ingestion', 'scheduled__2024-01-31T14:14:00+00:00', '--job-id', '150', '--raw', '--subdir', 'DAGS_FOLDER/mysql_ingestor.py', '--cfg-path', '/tmp/tmp5wugdta6']
+[2024-01-31T14:16:00.989+0000] {standard_task_runner.py:88} INFO - Job 150: Subtask ingestion
+[2024-01-31T14:16:01.017+0000] {task_command.py:423} INFO - Running <TaskInstance: mysql_ingestor.ingestion scheduled__2024-01-31T14:14:00+00:00 [running]> on host eedf278c5a58
+[2024-01-31T14:16:01.069+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='mysql_ingestor' AIRFLOW_CTX_TASK_ID='ingestion' AIRFLOW_CTX_EXECUTION_DATE='2024-01-31T14:14:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-01-31T14:14:00+00:00'
+[2024-01-31T14:16:01.070+0000] {warnings.py:109} WARNING - /home/***/.local/lib/python3.8/site-packages/***/utils/context.py:207: AirflowContextDeprecationWarning: Accessing 'execution_date' from the template is deprecated and will be removed in a future version. Please use 'data_interval_start' or 'logical_date' instead.
+  warnings.warn(_create_deprecation_warning(key, self._deprecation_replacements[key]))
+
+[2024-01-31T14:16:01.082+0000] {logging_mixin.py:188} INFO - [   index  order_id  customer_id       order_status                 created_at
+0      0       854            2            created 2024-01-31 21:17:01.071001
+1      0       854            2    wait_to_payment 2024-01-31 21:26:01.071006
+2      0       854            2  payment_cancelled 2024-01-31 21:32:01.071007,    index  order_id  customer_id     order_status                 created_at
+0      1       855            1          created 2024-01-31 21:18:01.071018
+1      1       855            1  wait_to_payment 2024-01-31 21:25:01.071019
+2      1       855            1            paied 2024-01-31 21:29:01.071021
+3      1       855            1  wait_to_approve 2024-01-31 21:38:01.071022
+4      1       855            1         approved 2024-01-31 21:40:01.071023]
+[2024-01-31T14:16:06.097+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T14:16:06.111+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T14:16:11.125+0000] {logging_mixin.py:188} INFO - UPDATE falafel_db.orders SET order_status = %s, updated_at = %s WHERE order_id = %s
+[2024-01-31T14:16:11.133+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T14:16:11.145+0000] {logging_mixin.py:188} INFO - UPDATE falafel_db.orders SET order_status = %s, updated_at = %s WHERE order_id = %s
+[2024-01-31T14:16:11.151+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T14:16:16.168+0000] {logging_mixin.py:188} INFO - UPDATE falafel_db.orders SET order_status = %s, updated_at = %s WHERE order_id = %s
+[2024-01-31T14:16:16.178+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T14:16:16.187+0000] {logging_mixin.py:188} INFO - UPDATE falafel_db.orders SET order_status = %s, updated_at = %s WHERE order_id = %s
+[2024-01-31T14:16:16.192+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T14:16:21.208+0000] {logging_mixin.py:188} INFO - UPDATE falafel_db.orders SET order_status = %s, updated_at = %s WHERE order_id = %s
+[2024-01-31T14:16:21.216+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T14:16:26.233+0000] {logging_mixin.py:188} INFO - UPDATE falafel_db.orders SET order_status = %s, updated_at = %s WHERE order_id = %s
+[2024-01-31T14:16:26.241+0000] {logging_mixin.py:188} INFO - Connected to MySQL database!
+[2024-01-31T14:16:31.250+0000] {python.py:201} INFO - Done. Returned value was: None
+[2024-01-31T14:16:31.260+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=mysql_ingestor, task_id=ingestion, execution_date=20240131T141400, start_date=20240131T141600, end_date=20240131T141631
+[2024-01-31T14:16:31.306+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-01-31T14:16:31.319+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
