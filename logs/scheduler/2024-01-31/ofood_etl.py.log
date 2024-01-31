@@ -691,3 +691,45 @@
 [2024-01-31T14:24:57.334+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:24:57.334+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2024-01-31T14:24:57.341+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:24:57.341+0000] {dag.py:3823} INFO - Setting next_dagrun for ofood_etl to None, run_after=None
 [2024-01-31T14:24:57.353+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ofood_etl.py took 0.070 seconds
+[2024-01-31T14:25:27.532+0000] {processor.py:161} INFO - Started process (PID=996) to work on /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:25:27.534+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ofood_etl.py for tasks to queue
+[2024-01-31T14:25:27.536+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:25:27.535+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:25:27.570+0000] {processor.py:840} INFO - DAG(s) 'ofood_etl' retrieved from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:25:27.584+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:25:27.584+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:25:27.590+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:25:27.590+0000] {dag.py:3823} INFO - Setting next_dagrun for ofood_etl to None, run_after=None
+[2024-01-31T14:25:27.602+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ofood_etl.py took 0.072 seconds
+[2024-01-31T14:25:57.773+0000] {processor.py:161} INFO - Started process (PID=1005) to work on /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:25:57.774+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ofood_etl.py for tasks to queue
+[2024-01-31T14:25:57.775+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:25:57.775+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:25:57.809+0000] {processor.py:840} INFO - DAG(s) 'ofood_etl' retrieved from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:25:57.822+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:25:57.822+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:25:57.828+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:25:57.828+0000] {dag.py:3823} INFO - Setting next_dagrun for ofood_etl to None, run_after=None
+[2024-01-31T14:25:57.839+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ofood_etl.py took 0.068 seconds
+[2024-01-31T14:26:27.962+0000] {processor.py:161} INFO - Started process (PID=1014) to work on /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:26:27.964+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ofood_etl.py for tasks to queue
+[2024-01-31T14:26:27.965+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:26:27.965+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:26:28.000+0000] {processor.py:840} INFO - DAG(s) 'ofood_etl' retrieved from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:26:28.014+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:26:28.014+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:26:28.022+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:26:28.021+0000] {dag.py:3823} INFO - Setting next_dagrun for ofood_etl to None, run_after=None
+[2024-01-31T14:26:28.034+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ofood_etl.py took 0.074 seconds
+[2024-01-31T14:26:58.175+0000] {processor.py:161} INFO - Started process (PID=1023) to work on /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:26:58.176+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ofood_etl.py for tasks to queue
+[2024-01-31T14:26:58.176+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:26:58.176+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:26:58.211+0000] {processor.py:840} INFO - DAG(s) 'ofood_etl' retrieved from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:26:58.225+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:26:58.225+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:26:58.231+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:26:58.231+0000] {dag.py:3823} INFO - Setting next_dagrun for ofood_etl to None, run_after=None
+[2024-01-31T14:26:58.242+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ofood_etl.py took 0.070 seconds
+[2024-01-31T14:27:28.396+0000] {processor.py:161} INFO - Started process (PID=1032) to work on /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:27:28.398+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ofood_etl.py for tasks to queue
+[2024-01-31T14:27:28.399+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:27:28.399+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:27:28.432+0000] {processor.py:840} INFO - DAG(s) 'ofood_etl' retrieved from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:27:28.446+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:27:28.446+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:27:28.452+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:27:28.452+0000] {dag.py:3823} INFO - Setting next_dagrun for ofood_etl to None, run_after=None
+[2024-01-31T14:27:28.463+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ofood_etl.py took 0.068 seconds
+[2024-01-31T14:27:58.633+0000] {processor.py:161} INFO - Started process (PID=1041) to work on /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:27:58.635+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/ofood_etl.py for tasks to queue
+[2024-01-31T14:27:58.637+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:27:58.637+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:27:58.674+0000] {processor.py:840} INFO - DAG(s) 'ofood_etl' retrieved from /opt/airflow/dags/ofood_etl.py
+[2024-01-31T14:27:58.687+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:27:58.687+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2024-01-31T14:27:58.693+0000] {logging_mixin.py:188} INFO - [2024-01-31T14:27:58.693+0000] {dag.py:3823} INFO - Setting next_dagrun for ofood_etl to None, run_after=None
+[2024-01-31T14:27:58.723+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/ofood_etl.py took 0.092 seconds
