@@ -9,7 +9,7 @@ In the ever-evolving landscape of data management and analytics, DataStack stand
 
 - Change Data Capture: Changes in the data are captured using Debezium and stored in Kafka topics.
 
-- Live Data Access Access: The ClickHouse database connects to Kafka to read data from the topics. Based on the data, some views are created to provide live insights.
+- Live Data Access: The ClickHouse database connects to Kafka to read data from the topics. Based on the data, some views are created to provide live insights.
 
 - Historical Data: Initially, the data is stored in MinIO. Then, a PySpark application extracts and transforms the data, loading it into another bucket in MinIO. Finally, another PySpark application loads this transformed data directly from MinIO into ClickHouse as historical data.
 
