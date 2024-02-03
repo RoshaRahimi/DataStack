@@ -10,6 +10,9 @@ USER airflow
 ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 RUN pip install --no-cache-dir "apache-airflow==${AIRFLOW_VERSION}" apache-airflow-providers-apache-spark==2.1.3
 RUN pip install airflow-providers-clickhouse
+RUN pip install mysql-connector-python
+RUN pip install clickhouse-driver
+RUN pip install minio
 
 
 #FROM confluentinc/cp-kafka-connect-base:latest-ubi8
