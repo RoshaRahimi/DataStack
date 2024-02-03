@@ -478,7 +478,7 @@ services:
     environment:
       SERVER_PORT: 6680
       LOGGING_LEVEL_ROOT: info
-      KAFKA_CLUSTERS_0_NAME: OFOOD-Kafka-Cluster
+      KAFKA_CLUSTERS_0_NAME: Kafka-Cluster
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka-broker:19092
       KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
       KAFKA_CLUSTERS_0_SCHEMAREGISTRY: http://schema-registry:8081
