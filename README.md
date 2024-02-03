@@ -40,6 +40,10 @@ In this project, we have utilized Apache Airflow, an open-source platform for or
     docker compose up airflow-init
 </pre>
 
+the archtecure of live and historical part in this project is presented in below image:
+![Alt text](https://github.com/RoshaRahimi/DataStack/blob/main/image/Live_Historical_Architecture.jpg)
+
+
 ## ClickHouse
 DataStack leverages ClickHouse as a powerful data warehousing solution. ClickHouse efficiently fetches data from Kafka and stores it in materialized views, enabling the generation of insightful reports. As a columnar database, ClickHouse excels at handling analytical queries, making it an ideal choice for data warehousing within the DataStack ecosystem.
 
