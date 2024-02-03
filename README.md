@@ -32,7 +32,13 @@ Whether you're dealing with data ingestion, transformation, or analysis, DataSta
 Stay tuned for further details on installation, usage, and contributing guidelines as DataStack evolves to meet the diverse needs of data professionals and enthusiasts alike.
 
 ## Airflow and Python Jobs
-In this project, we have utilized Apache Airflow, an open-source platform for orchestrating, scheduling, and monitoring workflows, to handle the batch processing component. There are two primary DAGs in this project. The first DAG, mysql_ingestor.py, is responsible for ingesting data into the MySQL production database every five minutes. The second DAG, etl.py, implements the ETL (Extract, Transform, Load) process to provide historical data and perform daily operations the transformation process are handled by Pyspark and the connection info are defined and handled in airflow connection part.
+In this project, we have utilized Apache Airflow, an open-source platform for orchestrating, scheduling, and monitoring workflows, to handle the batch processing component. There are two primary DAGs in this project. The first DAG, mysql_ingestor.py, is responsible for ingesting data into the MySQL production database every five minutes. The second DAG, etl.py, implements the ETL (Extract, Transform, Load) process to provide historical data and perform daily operations the transformation process are handled by Pyspark and the connection info are defined and handled in airflow connection part. Before running the containers, it is necessary to configure the settings for Apache Airflow. Additionally, it is important to ensure that the environment is properly configured for the Docker Compose setup. 
+
+<pre>
+    mkdir -p ./dags ./logs ./plugins ./config
+    echo -e "AIRFLOW_UID=$(id -u)" > .env
+    docker compose up airflow-init
+</pre>
 
 ## ClickHouse
 DataStack leverages ClickHouse as a powerful data warehousing solution. ClickHouse efficiently fetches data from Kafka and stores it in materialized views, enabling the generation of insightful reports. As a columnar database, ClickHouse excels at handling analytical queries, making it an ideal choice for data warehousing within the DataStack ecosystem.
