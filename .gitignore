@@ -13,3 +13,27 @@ minio-data/
 .env
 
 .git/
+
+
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+
+airflow.cfg
+airflow_login.py
+dbinit.py
+initdb.py
+secrets.py
+
+
+airflow.db
+
+airflow/git_version
+airflow/www/static/coverage/
+airflow/www/*.log
+/logs/
+airflow-webserver.pid
+standalone_admin_password.txt
+warnings.txt
