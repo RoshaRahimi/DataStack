@@ -1,9 +1,6 @@
-from airflow import DAG
 from airflow.decorators import dag, task
 from airflow.models import Connection
 from datetime import datetime
-import pyspark
-from pyspark.sql import SparkSession
 from pyspark.sql import functions as F
 from airflow.hooks.base_hook import BaseHook
 import pendulum
@@ -11,13 +8,15 @@ from airflow.operators.python import get_current_context
 import connector as c
 from pyspark.sql.functions import to_date, col
 from pyspark.sql.window import Window
+from clickhouse_driver import Client
+
+
 
 #defining dag in a decorated way
 @dag(
     schedule=None,
     start_date=pendulum.datetime(2024, 1, 21, tz="UTC"),
     catchup=False,
-    tags=["test"],
     doc_md = "this is a dag to define tasks for etl data from minio to clickhouse"
 )
 def etl():
@@ -25,43 +24,23 @@ def etl():
     @task
     def extract_transform_phase():
         pass
-             
-        # from minio import Minio
-
+        
         context = get_current_context()
         context_execution_date = context['execution_date'].format('YYYY-MM-DD')
 
+        minio_connection = Connection.get_connection_from_secrets("minio-connection")
 
 
-        #minio_connection = Connection.get_connection_from_secrets('minio_connection')
-
-        # minio_connection = Connection.get_connection_from_secrets("minio-connection")
-
-        # clickhouse_connection = Connection.get_connection_from_secrets("clickhouse-connection")
-
-
-        # loading configs
-        # minio_config = {
-        # "minio_access_key": minio_connection.login,
-        # "minio_secret_key": minio_connection.password,
-        # "minio_host": minio_connection.extra_dejson.get("minio_host"),
-        # "minio_port":minio_connection.extra_dejson.get("minio_port")}
-
-        # clickhouse_config = {
-        # "clickhouse_host": clickhouse_connection.host,
-        # "clickhouse_port": clickhouse_connection.port,
-        # "clickhouse_user": clickhouse_connection.login,
-        # "clickhouse_password": clickhouse_connection.password}
 
         minio_config = {
-        "minio_access_key": "minio_access_key",
-        "minio_secret_key": "minio_secret_key",
-        "minio_host": "minio",
-        "minio_port": 9000}
+        "minio_access_key": minio_connection.login,
+        "minio_secret_key": minio_connection.password,
+        "minio_host": minio_connection.extra_dejson.get("minio_host"),
+        "minio_port":minio_connection.extra_dejson.get("minio_port")}
+
 
         # define spark session
         spark_session = c.create_spark_session("ofood_etl", 1, minio_config)
-
 
         orders = c.read_from_minio(
                             bucket_name = "production", 
@@ -107,39 +86,44 @@ def etl():
                  )
             
     
-    # @task
-    # def load_phase():
-    #     import connector as c
-    #     from clickhouse_driver import Client
+    @task
+    def load_phase():
         
-    #     clickhouse_client = Client(
-    #     host='clickhouse',
-    #     port='9000',
-    #     user='admin',
-    #     password='123qweasd',
-    #     settings={'use_numpy': True})
+        context = get_current_context()
+        context_execution_date = context['execution_date'].format('YYYY-MM-DD')
+
+        clickhouse_connection = Connection.get_connection_from_secrets("clickhouse-connection")
+        
+        clickhouse_client = Client(
+        host = clickhouse_connection.host,
+        port = clickhouse_connection.port,
+        user = clickhouse_connection.login,
+        password = clickhouse_connection.password,
+        settings={'use_numpy': True})
 
 
-    #     minio_config = {
-    #     "minio_access_key": "minio_access_key", #minio_connection.login,
-    #     "minio_secret_key": "minio_secret_key", #minio_connection.password,
-    #     "minio_host":"minio",
-    #     "minio_port":"9000"}
+        minio_connection = Connection.get_connection_from_secrets("minio-connection")
+
+        minio_config = {
+        "minio_access_key": minio_connection.login,
+        "minio_secret_key": minio_connection.password,
+        "minio_host": minio_connection.extra_dejson.get("minio_host"),
+        "minio_port":minio_connection.extra_dejson.get("minio_port")}
 
 
-    #     c.insert_parquet_into_clickhouse(clickhouse_client= clickhouse_client, 
-    #                            minio_connection=minio_config, 
-    #                            date='2024-01-31', 
-    #                            bucket='production-transformation', 
-    #                            topic='production.falafel_db.orders', 
-    #                            schema='default', 
-    #                            table='orders')
+        c.insert_parquet_into_clickhouse(clickhouse_client = clickhouse_client, 
+                               minio_connection = minio_config, 
+                               date = context_execution_date, 
+                               bucket = 'production-transformation', 
+                               topic = 'production.production_db.orders', 
+                               schema = 'default', 
+                               table = 'orders')
 
 
 
-    extract_transform_phase() #>> load_phase()
+    extract_transform_phase() >> load_phase()
     
 
 
-#calling the dag function
+
 etl()
