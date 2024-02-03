@@ -277,7 +277,7 @@ FROM product_queue;
 
 
 ---------------------------------------------order
-CREATE TABLE order_queue
+CREATE TABLE orders_queue
 (
     order_id        Int64,
     customer_id     Int64,
@@ -285,10 +285,10 @@ CREATE TABLE order_queue
     created_at      Nullable(DATETIME64),
     updated_at      Nullable(DATETIME64)
 )
-    ENGINE = Kafka('kafka-broker:19092', 'production.production_db.order', 'cons_order', 'AvroConfluent')--'JSONEachRow',--AvroConfluent
+    ENGINE = Kafka('kafka-broker:19092', 'production.production_db.orders', 'cons_orders', 'AvroConfluent')--'JSONEachRow',--AvroConfluent
         SETTINGS format_avro_schema_registry_url = 'http://schema-registry:8081';
 
-CREATE TABLE order
+CREATE TABLE orders
 (
     order_id        Int64,
     customer_id     Int64,
@@ -300,7 +300,7 @@ CREATE TABLE order
     ORDER BY (order_id);
 
 
-CREATE MATERIALIZED VIEW order_mv to order (
+CREATE MATERIALIZED VIEW orders_mv to orders (
     order_id        Int64,
     customer_id     Int64,
     status_id       Int64,
@@ -313,7 +313,7 @@ SELECT order_id,
        status_id,
        toDateTime(created_at) as created_at,
        toDateTime(updated_at) as updated_at
-FROM order_queue;
+FROM orders_queue;
 
 
 
@@ -325,7 +325,7 @@ CREATE TABLE order_item_queue
     order_item_id   Int64,
     order_id        Int64,
     product_id      Int64,
-    count           Int64
+    quantity           Int64
 )
     ENGINE = Kafka('kafka-broker:19092', 'production.production_db.order_item', 'cons_order_item', 'AvroConfluent')--'JSONEachRow',--AvroConfluent
         SETTINGS format_avro_schema_registry_url = 'http://schema-registry:8081';
@@ -335,7 +335,7 @@ CREATE TABLE order_item
     order_item_id   Int64,
     order_id        Int64,
     product_id      Int64,
-    count           Int64
+    quantity           Int64
 )
     ENGINE = MergeTree()
     ORDER BY (order_item_id);
@@ -345,13 +345,13 @@ CREATE MATERIALIZED VIEW order_item_mv to order_item (
     order_item_id   Int64,
     order_id        Int64,
     product_id      Int64,
-    count           Int64
+    quantity           Int64
     )
 AS
 SELECT order_item_id,
        order_id,
        product_id,
-       count
+       quantity
 FROM order_item_queue;
 
 

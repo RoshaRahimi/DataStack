@@ -7,10 +7,10 @@ from time import sleep
 ###################################################################
 # defining connection parameters
 config = {
-    'user': 'user',
-    'password': 'password',
-    'host': 'mysql-falafel',
-    'database': 'falafel_db',
+    'user': 'root',
+    'password': 'my-secret-pw',
+    'host': 'mysql_production',
+    'database': 'production_db',
     'port': '3306'
 }
 
@@ -63,24 +63,14 @@ def update_function(table, columns, values, condition_column, condition_value, c
 
 ###################################################################################
 
-#status options
-# "created"
-# "wait_to_payment"
-# "paied"
-# "payment_cancelled"
-# "wait_to_approve"
-# "rejected"
-# "approved"
-# "cancelled"
-# "finalized"
 
 order_possibilities = \
 [
-    ["created", "wait_to_payment", "payment_cancelled"],
-    ["created", "wait_to_payment", "paied", "wait_to_approve", "rejected"],
-    ["created", "wait_to_payment", "paied", "wait_to_approve", "approved"],
-    ["created", "wait_to_payment", "paied", "wait_to_approve", "approved", "finalized"],
-    ["created", "wait_to_payment", "paied", "wait_to_approve", "approved", "cancelled"],
+    [1, 2, 4],
+    [1, 2, 3, 5, 6],
+    [1, 2, 3, 5, 7],
+    [1, 2, 3, 5, 7, 9],
+    [1, 2, 3, 5, 7, 8],
 
 ]
 
@@ -95,7 +85,7 @@ def create_order(from_order_id, to_order_id, order_possibilities):
     orders = []
     number_of_orders = to_order_id - from_order_id + 1 
     for order_id in range(from_order_id, to_order_id + 1):
-        customer_id = random.randint(1, number_of_orders)
+        customer_id = random.randint(1, 10)
         order_status_count = random.randint(0, 4)
         order_status = order_possibilities[order_status_count]
         dates = [datetime.now() + timedelta(minutes=random.randint(i[0], i[1])) for i in intervals[:len(order_status)]]
@@ -105,13 +95,13 @@ def create_order(from_order_id, to_order_id, order_possibilities):
         order = {
             'order_id': order_id,
             'customer_id': customer_id,
-            'order_status': order_status,
+            'status_id': order_status,
             'created_at': dates
         }
         orders.append(order)
 
     orders_df = pd.DataFrame(orders)
-    exploded_orders_df = orders_df.explode(['order_status', 'created_at'])
+    exploded_orders_df = orders_df.explode(['status_id', 'created_at'])
     return exploded_orders_df
 
 
@@ -122,7 +112,7 @@ def create_order_items(order_item_id_from, order_list):
         num_items = random.randint(1, 5)  # Random number of items per order
         
         for _ in range(num_items):  # Use "_" as a throwaway variable since the item ID will be generated manually
-            product_id = random.randint(1, 100)
+            product_id = random.randint(1, 10)
             quantity = random.randint(1, 10)
             
             order_item = {
@@ -163,19 +153,19 @@ def ingestor(orders_list, order_items):
         sleep(5)
         for df in orders_list:
             if df.shape[0]>0:
-                insert_record = df.head(1)[['order_id', 'customer_id', 'order_status', 'created_at']]
+                insert_record = df.head(1)[['order_id', 'customer_id', 'status_id', 'created_at']]
                 order_id = insert_record.order_id[0]
-                order_status = insert_record.order_status[0]
+                status_id = insert_record.status_id[0]
                 creation_date = insert_record.created_at[0]
-                if order_status == "created":
-                    insert_function(insert_record ,"falafel_db.orders", config)
+                if status_id == 1:
+                    insert_function(insert_record ,"production_db.orders", config)
                     # order_items_records = order_items_df[order_items_df['order_id']==order_id]
-                    # mysql_crud.insert_function(order_items_records, "falafel_db.order_items", config)
+                    # mysql_crud.insert_function(order_items_records, "production_db.order_items", config)
                 else:
                     update_function(
-                        table="falafel_db.orders", 
-                        columns=["order_status", "updated_at"], 
-                        values=[order_status, creation_date], 
+                        table="production_db.orders", 
+                        columns=["status_id", "updated_at"], 
+                        values=[status_id, creation_date], 
                         condition_column="order_id", 
                         condition_value= str(order_id), 
                         config = config)
@@ -183,11 +173,12 @@ def ingestor(orders_list, order_items):
             if df.shape[0] > 1:
                 updated_list.append(df.drop(0))
         updated_list = [df.reset_index() for df in updated_list]
-        updated_list = [df[['order_id', 'customer_id', 'order_status', 'created_at']] for df in updated_list]
+        updated_list = [df[['order_id', 'customer_id', 'status_id', 'created_at']] for df in updated_list]
         orders_list = updated_list
         updated_list = []
+        insert_function(order_items, "production_db.order_item", config)
 
 
 
 
-# mysql_crud.insert_function(order_items_df, "falafel_db.order_items", config)
+

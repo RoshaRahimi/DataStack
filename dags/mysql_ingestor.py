@@ -10,7 +10,7 @@ from ingestor import create_order, create_order_items, create_order_list, ingest
 
 #defining dag in a decorated way
 @dag(
-    schedule="*/2 * * * *",
+    schedule= None, #"*/2 * * * *",
     start_date=pendulum.datetime(2024, 1, 21, tz="UTC"),
     catchup=False,
     tags=["test"],
@@ -26,11 +26,14 @@ def mysql_ingestor():
         date_diff = context_execution_date.diff(pendulum.datetime(2024, 1, 31, 0, 0, 0)).in_minutes()
         
         order_possibilities = \
-        [["created", "wait_to_payment", "payment_cancelled"],
-        ["created", "wait_to_payment", "paied", "wait_to_approve", "rejected"],
-        ["created", "wait_to_payment", "paied", "wait_to_approve", "approved"],
-        ["created", "wait_to_payment", "paied", "wait_to_approve", "approved", "finalized"],
-        ["created", "wait_to_payment", "paied", "wait_to_approve", "approved", "cancelled"],]
+        [
+            [1, 2, 4],
+            [1, 2, 3, 5, 6],
+            [1, 2, 3, 5, 7],
+            [1, 2, 3, 5, 7, 9],
+            [1, 2, 3, 5, 7, 8],
+
+        ]
 
         orders = create_order(date_diff, date_diff + 1, order_possibilities)
 
@@ -38,7 +41,7 @@ def mysql_ingestor():
 
         orders_list = create_order_list(orders)
 
-        # print(orders)
+        print(orders)
 
         # print(order_items)
 

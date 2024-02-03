@@ -61,14 +61,16 @@ CREATE TABLE order_status (
     updated_at  DATETIME        NULL
 );
 INSERT INTO order_status (title,description,created_at,updated_at)
-VALUES  ('registered','registered',now(),now()),
-        ('wait for confirm','wait for confirm',now(),now()),
-        ('confirmed','confirmed',now(),now()),
-        ('preparing','preparing',now(),now()),
-        ('collecting','collecting',now(),now()),
-        ('received','received',now(),now()),
-        ('canceled','canceled',now(),now()),
-        ('modified','modified',now(),now());
+VALUES  ('created','created',now(),now()),
+        ('wait_to_payment','wait_to_payment',now(),now()),
+        ('paied','paied',now(),now()),
+        ('payment_cancelled','payment_cancelled',now(),now()),
+        ('wait_to_approve','wait_to_approve',now(),now()),
+        ('rejected','rejected',now(),now()),
+        ('approved','approved',now(),now()),
+        ('cancelled','cancelled',now(),now()),
+        ('finalized', 'finalized', now(), now());
+
 
 
 DROP TABLE IF EXISTS customer;
@@ -119,27 +121,16 @@ VALUES  ('sushi','sushi',10,1),
         ('fries','fries',2,1);
 
 
-DROP TABLE IF EXISTS production_db.order;
-CREATE TABLE production_db.order (
+DROP TABLE IF EXISTS production_db.orders;
+CREATE TABLE production_db.orders (
     order_id        INT PRIMARY KEY,
     customer_id     INT         NOT NULL,
     status_id       INT         NOT NULL,
     created_at      DATETIME    NOT NULL,
-    updated_at      DATETIME    NULL,
+    updated_at      DATETIME    NULL default now(),
     FOREIGN KEY (status_id) REFERENCES order_status(status_id),
     FOREIGN KEY (customer_id) REFERENCES customer(customer_id)
 );
-INSERT INTO production_db.order (order_id,customer_id,status_id,created_at,updated_at)
-VALUES  (1,1,1,'2023-01-31 19:31:55','2023-01-31 19:33:55'),
-        (2,2,2,'2023-01-31 19:32:55','2023-01-31 19:34:55'),
-        (3,2,2,'2023-01-31 19:32:55','2023-01-31 19:34:55'),
-        (4,3,3,'2024-01-31 19:32:55','2024-01-31 19:34:55'),
-        (5,4,4,'2023-01-31 19:32:55','2023-01-31 19:34:55'),
-        (6,4,4,'2024-01-31 19:32:55','2024-01-31 19:34:55'),
-        (7,4,4,'2023-01-31 19:32:55','2023-01-31 19:34:55'),
-        (8,5,4,'2024-01-31 19:32:55','2024-01-31 19:34:55'),
-        (9,1,4,'2024-01-31 19:32:55','2024-01-31 19:34:55'),
-        (10,1,4,'2023-01-31 19:32:55','2023-01-31 19:34:55');
 
 
 DROP TABLE IF EXISTS order_item;
@@ -147,38 +138,7 @@ CREATE TABLE order_item (
     order_item_id   INT PRIMARY KEY AUTO_INCREMENT,
     order_id        INT NOT NULL,
     product_id      INT NOT NULL,
-    count           INT NOT NULL,
-    FOREIGN KEY (order_id) REFERENCES production_db.order(order_id),
+    quantity           INT NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES production_db.orders(order_id),
     FOREIGN KEY (product_id) REFERENCES product(product_id)
 );
-INSERT INTO order_item(order_id,product_id,count)
-VALUES  (1,1,1),
-        (1,2,2),
-        (1,3,3),
-        (2,4,1),
-        (2,5,2),
-        (2,6,3),
-        (3,7,1),
-        (3,8,2),
-        (3,9,3),
-        (4,10,3),
-        (4,1,3),
-        (4,2,1),
-        (5,3,2),
-        (5,4,2),
-        (5,5,1),
-        (6,6,1),
-        (6,7,1),
-        (6,8,1),
-        (7,9,3),
-        (7,10,1),
-        (7,1,1),
-        (8,2,2),
-        (8,3,2),
-        (8,4,2),
-        (9,5,1),
-        (9,6,1),
-        (9,7,1),
-        (10,8,3),
-        (10,9,3),
-        (10,10,3);
