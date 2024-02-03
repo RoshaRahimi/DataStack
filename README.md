@@ -60,6 +60,7 @@ when start using mysql as a source, you have to set a root permission in mysql, 
 
 <pre>
 GRANT GRANT OPTION ON *.* TO 'root'@'localhost';
+FLUSH PRIVILEGES;
 </pre>
 
 after running docker compose file, you will have kafka-ui to see the status of connectors include sinks and sources and schema-registry and messages
