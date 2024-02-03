@@ -161,6 +161,8 @@ def ingestor(orders_list, order_items):
                     insert_function(insert_record ,"production_db.orders", config)
                     # order_items_records = order_items_df[order_items_df['order_id']==order_id]
                     # mysql_crud.insert_function(order_items_records, "production_db.order_items", config)
+                    sleep(2)
+                    insert_function(order_items, "production_db.order_item", config)
                 else:
                     update_function(
                         table="production_db.orders", 
@@ -176,7 +178,7 @@ def ingestor(orders_list, order_items):
         updated_list = [df[['order_id', 'customer_id', 'status_id', 'created_at']] for df in updated_list]
         orders_list = updated_list
         updated_list = []
-        insert_function(order_items, "production_db.order_item", config)
+        
 
 
 
