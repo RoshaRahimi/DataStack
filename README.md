@@ -97,11 +97,12 @@ now we have a source connector to mysql that get messages from it and have a sin
 
 this is the mysql connector that we have, let see how it does work:
 
+<pre>
 {
-    "name": "mysql-source-v55", 
+    "name": "mysql-source", 
     "config": {
         "connector.class": "io.debezium.connector.mysql.MySqlConnector", 
-        "database.hostname": "mysql_falafel", 
+        "database.hostname": "mysql_production", 
         "database.port": "3306", 
         "database.user": "root", 
         "database.password": "my-secret-pw", 
@@ -122,20 +123,15 @@ this is the mysql connector that we have, let see how it does work:
         "log.retention.minutes":"null",
         "log.retention.ms":"-1",
         
-        "transforms": "unwrap,TimestampConverter",
+        "transforms": "unwrap",
         "transforms.unwrap.type": "io.debezium.transforms.ExtractNewRecordState",
         "transforms.unwrap.drop.tombstones": "true",
         "transforms.unwrap.add.fields": "op,source.ts_ms:EVENT_TS,ts_ms:KAFKA_EVENT_TS",
 
-        "transforms.TimestampConverter.type": "org.apache.kafka.connect.transforms.TimestampConverter$Value",
-        "transforms.TimestampConverter.field": "created_at",
-        "transforms.TimestampConverter.format": "yyyy-MM-dd HH:mm:ss",
-        "transforms.TimestampConverter.target.type": "string",
-
         "snapshot.mode": "initial"
     }
 }
-
+</pre>
 
 ### Connector Configuration:
 
@@ -168,13 +164,6 @@ transforms: Comma-separated list of transformations to apply.
 transforms.unwrap.type: Transformation to unwrap the Debezium message format.
 transforms.unwrap.drop.tombstones: Whether to drop tombstone events (set to true). remains deleted records with operation 'd'
 transforms.unwrap.add.fields: Additional fields to be added to the unwrapped message (e.g., operation type, timestamps).
-
-### Timestamp Converter:
-
-transforms.TimestampConverter.type: Transformation to convert timestamp format.
-transforms.TimestampConverter.field: Field containing the timestamp.
-transforms.TimestampConverter.format: Format of the timestamp.
-transforms.TimestampConverter.target.type: Target type for the timestamp.
 
 ### Snapshot Mode:
 
