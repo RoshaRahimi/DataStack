@@ -3,7 +3,15 @@ DataStack
 DataStack is a comprehensive Docker Compose project designed to provide a robust and versatile stack for managing and analyzing data. This stack brings together various services, each playing a crucial role in different stages of the data lifecycle.
 
 ## Overview
-In the ever-evolving landscape of data management and analytics, DataStack stands out as a powerful solution. Leveraging Docker Compose, this project seamlessly integrates different services to handle various aspects of the data journey, from ingestion to analysis.
+In the ever-evolving landscape of data management and analytics, DataStack stands out as a powerful solution. Leveraging Docker Compose, this project seamlessly integrates different services to handle various aspects of the data journey, from ingestion to analysis. This project contains different services, and its architecture can be divided into four parts:
+
+- Ingestion: There is a Python script that serves as an ingestor to ingest sample data into the MySQL database, which serves as the production database.
+
+- Change Data Capture: Changes in the data are captured using Debezium and stored in Kafka topics.
+
+- Live Data Access Access: The ClickHouse database connects to Kafka to read data from the topics. Based on the data, some views are created to provide live insights.
+
+- Historical Data: Initially, the data is stored in MinIO. Then, a PySpark application extracts and transforms the data, loading it into another bucket in MinIO. Finally, another PySpark application loads this transformed data directly from MinIO into ClickHouse as historical data.
 
 ## Kafka and Debezium
 DataStack relies on Apache Kafka and Debezium for its data streaming and change data capture capabilities. Kafka, a distributed event streaming platform, provides a scalable and fault-tolerant foundation for real-time data processing. Debezium, a distributed platform for CDC, enables the streaming of database changes into Kafka topics, ensuring a reliable and up-to-date data pipeline.
