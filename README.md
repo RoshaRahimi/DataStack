@@ -1,5 +1,4 @@
 # DataStack
-DataStack
 DataStack is a comprehensive Docker Compose project designed to provide a robust and versatile stack for managing and analyzing data. This stack brings together various services, each playing a crucial role in different stages of the data lifecycle.
 
 ## Overview
